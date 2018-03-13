@@ -1,4 +1,4 @@
-package macheda.com.outerspacemanager.outerspacemanager;
+package macheda.com.outerspacemanager.outerspacemanager.Services.Responses;
 
 /**
  * Created by amacheda on 05/03/2018.
@@ -24,4 +24,9 @@ public class ConnectionResponse {
     }
 
     private String expires;
+
+    public ConnectionResponse(String token, String expires) {
+        this.token = token;
+        this.expires = expires;
+    }
 }

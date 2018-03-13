@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="macheda.com.outerspacemanager.outerspacemanager.SignUpActivity">
+    tools:context="macheda.com.outerspacemanager.outerspacemanager.Activities.SignUpActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:text="Email :" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/editText1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -42,7 +42,7 @@
             android:text="Nom d'utilisateur :" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/editText2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -64,7 +64,7 @@
             android:text="Mot de passe :" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/editText3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
