@@ -12,12 +12,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:id="@+id/usernameTextView"
+            android:id="@+id/vueGeneraleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingVertical="24dp"
-            android:text="TextView"
+            android:text="Vue générale"
             android:textAlignment="center"
             android:textSize="24sp" />
     </LinearLayout>
@@ -25,30 +25,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="2dp">
 
         <TextView
-            android:id="@+id/pointsTextView"
+            android:id="@+id/gasTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Points : "
-            android:textAlignment="center" />
+            android:text="Gas : "
+            android:textAlignment="center"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="20dp">
-
-        <Button
-            android:id="@+id/vueGeneraleBouton"
+        <TextView
+            android:id="@+id/gasNTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Vue générale" />
+            android:text="0"
+            android:textAlignment="center"/>
 
     </LinearLayout>
 
@@ -58,12 +52,21 @@
         android:orientation="horizontal"
         android:paddingTop="2dp">
 
-        <Button
-            android:id="@+id/batimentsBouton"
+        <TextView
+            android:id="@+id/gasModifierTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Bâtiments" />
+            android:text="Gas Modifier :"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/gasModifierNTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0"
+            android:textAlignment="center"/>
 
     </LinearLayout>
 
@@ -73,12 +76,21 @@
         android:orientation="horizontal"
         android:paddingTop="2dp">
 
-        <Button
-            android:id="@+id/flotteBouton"
+        <TextView
+            android:id="@+id/mineralsTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Flotte" />
+            android:text="Minerals :"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/mineralsNTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0"
+            android:textAlignment="center"/>
 
     </LinearLayout>
 
@@ -88,42 +100,21 @@
         android:orientation="horizontal"
         android:paddingTop="2dp">
 
-        <Button
-            android:id="@+id/recherchesBouton"
+        <TextView
+            android:id="@+id/mineralsModifierTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Recherches" />
+            android:text="Minerals Modifier :"
+            android:textAlignment="center"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="2dp">
-
-        <Button
-            android:id="@+id/chantierNavalBouton"
+        <TextView
+            android:id="@+id/mineralsModifierNTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Chantier naval" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="2dp">
-
-        <Button
-            android:id="@+id/galaxieBouton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Galaxie" />
+            android:text="0"
+            android:textAlignment="center"/>
 
     </LinearLayout>
 

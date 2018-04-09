@@ -1,5 +1,6 @@
 package macheda.com.outerspacemanager.outerspacemanager.Activities;
 
+import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +38,9 @@ public class SignUpActivity extends AppCompatActivity {
                 usernameText = findViewById(R.id.editText2);
                 passwordText = findViewById(R.id.editText3);
 
+                final ProgressDialog pDialog = ProgressDialog.show(SignUpActivity.this, "",
+                        "Enregistrement en cours...", true);
+
                 Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl("https://outer-space-manager.herokuapp.com/api/")
                         .addConverterFactory(GsonConverterFactory.create())
@@ -44,16 +48,17 @@ public class SignUpActivity extends AppCompatActivity {
 
                 OuterSpaceService service = retrofit.create(OuterSpaceService.class);
 
-                Call<ConnectionResponse> rep = service.signUp(new ConnectionRequest(usernameText.toString(), emailText.toString(), passwordText.toString()));
+                Call<ConnectionResponse> rep = service.signUp(new ConnectionRequest(emailText.getText().toString(), usernameText.getText().toString(), passwordText.getText().toString()));
 
                 rep.enqueue(new Callback<ConnectionResponse>() {
                     @Override
                     public void onResponse(Call<ConnectionResponse> call, Response<ConnectionResponse> response) {
+                        pDialog.dismiss();
                         if(response.code() == 401)
                             Toast.makeText(getApplicationContext(), "Erreur : " + response.message(), Toast.LENGTH_LONG).show();
-                        } else {
+                        else
                             Toast.makeText(getApplicationContext(), "Inscription terminée ", Toast.LENGTH_LONG).show();
-                        }
+
                     }
 
                     @Override

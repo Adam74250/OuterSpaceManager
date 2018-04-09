@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 OuterSpaceService service = retrofit.create(OuterSpaceService.class);
 
-                Call<LoginResponse> rep = service.login(new LoginRequest(usernameText.toString(), passwordText.toString()));
+                Call<LoginResponse> rep = service.login(new LoginRequest(usernameText.getText().toString(), passwordText.getText().toString()));
 
                 rep.enqueue(new Callback<LoginResponse>() {
                     @Override
