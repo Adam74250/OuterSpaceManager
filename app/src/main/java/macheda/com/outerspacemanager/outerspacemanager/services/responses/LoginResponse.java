@@ -1,10 +1,12 @@
-package macheda.com.outerspacemanager.outerspacemanager.Services.Responses;
+package macheda.com.outerspacemanager.outerspacemanager.services.responses;
 
 /**
- * Created by amacheda on 05/03/2018.
+ * Created by adammacheda on 13/03/2018.
  */
 
-public class ConnectionResponse {
+public class LoginResponse {
+    private String token;
+
     public String getToken() {
         return token;
     }
@@ -12,8 +14,6 @@ public class ConnectionResponse {
     public void setToken(String token) {
         this.token = token;
     }
-
-    private String token;
 
     public String getExpires() {
         return expires;
@@ -25,7 +25,7 @@ public class ConnectionResponse {
 
     private String expires;
 
-    public ConnectionResponse(String token, String expires) {
+    public LoginResponse(String token, String expires) {
         this.token = token;
         this.expires = expires;
     }

@@ -1,4 +1,4 @@
-package macheda.com.outerspacemanager.outerspacemanager.Services.Requests;
+package macheda.com.outerspacemanager.outerspacemanager.services.requests;
 
 /**
  * Created by adammacheda on 13/03/2018.

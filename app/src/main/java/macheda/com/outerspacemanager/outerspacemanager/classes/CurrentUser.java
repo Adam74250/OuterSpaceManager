@@ -1,11 +1,10 @@
-package macheda.com.outerspacemanager.outerspacemanager.Services.Responses;
+package macheda.com.outerspacemanager.outerspacemanager.classes;
 
 /**
- * Created by adammacheda on 09/04/2018.
+ * Created by adammacheda on 16/04/2018.
  */
 
-public class CurrentUserResponse {
-
+public class CurrentUser extends User {
     private float gas;
 
     private int gasModifier;
@@ -13,10 +12,6 @@ public class CurrentUserResponse {
     private float minerals;
 
     private int mineralsModifier;
-
-    private int points;
-
-    private String username;
 
     public float getGas() {
         return gas;
@@ -50,28 +45,11 @@ public class CurrentUserResponse {
         this.mineralsModifier = mineralsModifier;
     }
 
-    public int getPoints() {
-        return points;
-    }
-
-    public void setPoints(int points) {
-        this.points = points;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public CurrentUserResponse(float gas, int gasModifier, float minerals, int mineralsModifier, int points, String username) {
+    private CurrentUser(float gas, int gasModifier, float minerals, int mineralsModifier, int points, String username) {
+        super(points, username);
         this.gas = gas;
         this.gasModifier = gasModifier;
         this.minerals = minerals;
         this.mineralsModifier = mineralsModifier;
-        this.points = points;
-        this.username = username;
     }
 }

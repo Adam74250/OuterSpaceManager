@@ -1,7 +1,6 @@
-package macheda.com.outerspacemanager.outerspacemanager.Activities;
+package macheda.com.outerspacemanager.outerspacemanager.activities;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -11,9 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import macheda.com.outerspacemanager.outerspacemanager.Services.Requests.LoginRequest;
-import macheda.com.outerspacemanager.outerspacemanager.Services.Responses.LoginResponse;
-import macheda.com.outerspacemanager.outerspacemanager.Services.OuterSpaceService;
+import macheda.com.outerspacemanager.outerspacemanager.classes.Config;
+import macheda.com.outerspacemanager.outerspacemanager.services.requests.LoginRequest;
+import macheda.com.outerspacemanager.outerspacemanager.services.responses.LoginResponse;
+import macheda.com.outerspacemanager.outerspacemanager.services.OuterSpaceService;
 import macheda.com.outerspacemanager.outerspacemanager.R;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent SignUpActivity = new Intent(getApplicationContext(), macheda.com.outerspacemanager.outerspacemanager.Activities.SignUpActivity.class);
+                Intent SignUpActivity = new Intent(getApplicationContext(), macheda.com.outerspacemanager.outerspacemanager.activities.SignUpActivity.class);
                 startActivity(SignUpActivity);
             }
         });
@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                         "Connexion en cours...", true);
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("https://outer-space-manager.herokuapp.com/api/")
+                        .baseUrl(Config.API_URL)
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
 
@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("auth_token", response.body().getToken());
                             editor.commit();
 
-                            Intent MainActivity = new Intent(getApplicationContext(), macheda.com.outerspacemanager.outerspacemanager.Activities.MainActivity.class);
+                            Intent MainActivity = new Intent(getApplicationContext(), macheda.com.outerspacemanager.outerspacemanager.activities.MainActivity.class);
                             startActivity(MainActivity);
 
                             Toast.makeText(LoginActivity.this, "Bienvenue !" , Toast.LENGTH_LONG).show();

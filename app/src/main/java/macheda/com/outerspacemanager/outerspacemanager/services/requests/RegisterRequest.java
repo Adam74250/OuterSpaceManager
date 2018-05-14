@@ -1,10 +1,10 @@
-package macheda.com.outerspacemanager.outerspacemanager.Services.Requests;
+package macheda.com.outerspacemanager.outerspacemanager.services.requests;
 
 /**
  * Created by amacheda on 05/03/2018.
  */
 
-public class ConnectionRequest {
+public class RegisterRequest {
     public String getEmail() {
         return email;
     }
@@ -35,7 +35,7 @@ public class ConnectionRequest {
 
     private String password;
 
-    public ConnectionRequest(String email, String username, String password) {
+    public RegisterRequest(String email, String username, String password) {
         this.email = email;
         this.username = username;
         this.password = password;

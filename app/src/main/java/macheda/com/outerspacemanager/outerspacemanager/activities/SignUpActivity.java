@@ -1,4 +1,4 @@
-package macheda.com.outerspacemanager.outerspacemanager.Activities;
+package macheda.com.outerspacemanager.outerspacemanager.activities;
 
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import macheda.com.outerspacemanager.outerspacemanager.Services.Requests.ConnectionRequest;
-import macheda.com.outerspacemanager.outerspacemanager.Services.Responses.ConnectionResponse;
-import macheda.com.outerspacemanager.outerspacemanager.Services.OuterSpaceService;
+import macheda.com.outerspacemanager.outerspacemanager.classes.Config;
+import macheda.com.outerspacemanager.outerspacemanager.services.requests.RegisterRequest;
+import macheda.com.outerspacemanager.outerspacemanager.services.responses.RegisterResponse;
+import macheda.com.outerspacemanager.outerspacemanager.services.OuterSpaceService;
 import macheda.com.outerspacemanager.outerspacemanager.R;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -42,17 +43,17 @@ public class SignUpActivity extends AppCompatActivity {
                         "Enregistrement en cours...", true);
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("https://outer-space-manager.herokuapp.com/api/")
+                        .baseUrl(Config.API_URL)
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
 
                 OuterSpaceService service = retrofit.create(OuterSpaceService.class);
 
-                Call<ConnectionResponse> rep = service.signUp(new ConnectionRequest(emailText.getText().toString(), usernameText.getText().toString(), passwordText.getText().toString()));
+                Call<RegisterResponse> rep = service.signUp(new RegisterRequest(emailText.getText().toString(), usernameText.getText().toString(), passwordText.getText().toString()));
 
-                rep.enqueue(new Callback<ConnectionResponse>() {
+                rep.enqueue(new Callback<RegisterResponse>() {
                     @Override
-                    public void onResponse(Call<ConnectionResponse> call, Response<ConnectionResponse> response) {
+                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                         pDialog.dismiss();
                         if(response.code() == 401)
                             Toast.makeText(getApplicationContext(), "Erreur : " + response.message(), Toast.LENGTH_LONG).show();
@@ -62,7 +63,7 @@ public class SignUpActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<ConnectionResponse> call, Throwable t) {
+                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
                     }
                 });
             }

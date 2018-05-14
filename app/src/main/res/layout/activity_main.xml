@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="macheda.com.outerspacemanager.outerspacemanager.Activities.MainActivity">
+    tools:context="macheda.com.outerspacemanager.outerspacemanager.activities.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
