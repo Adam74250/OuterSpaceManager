@@ -1,6 +1,7 @@
 package macheda.com.outerspacemanager.outerspacemanager.services.responses;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import macheda.com.outerspacemanager.outerspacemanager.classes.Building;
 
@@ -10,7 +11,7 @@ import macheda.com.outerspacemanager.outerspacemanager.classes.Building;
 
 public class BuildingsResponse {
     private int size;
-    private ArrayList<Building> buildings;
+    private List<Building> buildings;
 
     public int getSize() {
         return size;
@@ -20,15 +21,15 @@ public class BuildingsResponse {
         this.size = size;
     }
 
-    public ArrayList<Building> getBuildings() {
+    public List<Building> getBuildings() {
         return buildings;
     }
 
-    public void setBuildings(ArrayList<Building> buildings) {
+    public void setBuildings(List<Building> buildings) {
         this.buildings = buildings;
     }
 
-    public BuildingsResponse(int size, ArrayList<Building> buildings) {
+    public BuildingsResponse(int size, List<Building> buildings) {
         this.size = size;
         this.buildings = buildings;
     }

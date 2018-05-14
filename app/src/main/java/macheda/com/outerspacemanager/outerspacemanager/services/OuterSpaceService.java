@@ -11,6 +11,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 /**
  * Created by amacheda on 05/03/2018.
@@ -28,5 +29,8 @@ public interface OuterSpaceService {
 
     @GET("/api/v1/buildings/list")
     Call<BuildingsResponse> buildings(@Header("x-access-token") String token);
+
+    @POST("/api/v1/buildings/create/{building}")
+    Call<LoginResponse> createBuilding(@Header("x-access-token") String token, @Path("building") int idBuilding);
 
 }

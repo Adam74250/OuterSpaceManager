@@ -26,7 +26,8 @@
         </activity>
         <activity android:name=".activities.MainActivity" />
         <activity android:name=".activities.VueGeneraleActivity" />
-        <activity android:name=".activities.BatimentsActivity"></activity>
+        <activity android:name=".activities.BatimentsActivity" />
+        <activity android:name=".activities.BatimentActivity" />
     </application>
 
 </manifest>
